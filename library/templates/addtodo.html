@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Library{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<form action="/addtodo/" method="post">{% csrf_token %}
+		  <div class="form-group">
+		    <label for="book_title">Book Title</label>
+		    <input type="text" class="form-control" id="book_title" name="book_title" required placeholder="Book Title">
+		  </div>
+		  <div class="form-group">
+		    <label for="author_name">Author Name</label>
+		    <input type="text" class="form-control" id="author_name" name="author_name" required placeholder="Author Name">
+		  </div>
+		  <div class="form-group">
+		    <label for="pub_year">Published Year</label>
+		    <input type="date" class="form-control" id="pub_year" name="pub_year" required>
+		  </div>
+		  
+		  <button class="btn btn-dark btn-lg btn-block" type="submit" class="btn btn-primary">Add item</button>
+		</form>
+	</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Library{% endblock %}
+
+{% block content %}
+		<!-- <form action="/updatetodo/{{ t_id.id }}/" method="post">{% csrf_token %}
+		<input type="text" name="book_title" value="{{t_id.Book_title}}" required>
+		<input type="text" name="author_name" value="{{t_id.Author_name}}" required>
+		<input type="date" name="pub_year" value="{{t_id.Published_year}}">
+		<input type="submit" name="submit" value="edit Todo">
+	</form> -->
+<!-- <a class="btn btn-dark btn-lg btn-block" href="{% url 'viewtodo' %}">go back</a> -->
+
+
+<div class="container">
+	<h2>Edit todo</h2>
+	<form action="/updatetodo/{{ t_id.id }}/" method="post">{% csrf_token %}
+		  <div class="form-group">
+		    <label for="book_title">Book Title</label>
+		    <input type="text" class="form-control" id="book_title" name="book_title" value="{{t_id.Book_title}}" required>
+		  </div>
+		  <div class="form-group">
+		    <label for="author_name">Author Name</label>
+		    <input type="text" class="form-control" id="author_name" name="author_name" value="{{t_id.Author_name}}" required>
+		  </div>
+		  <div class="form-group">
+		    <label for="pub_year">Published Year</label>
+		    <input type="date" class="form-control" id="pub_year" name="pub_year" value="{{t_id.Published_year}}" required>
+		  </div>
+		  
+		  <button class="btn btn-dark btn-lg btn-block" type="submit" class="btn btn-primary">Update item</button>
+		</form>
+	</div>
+{% endblock %}

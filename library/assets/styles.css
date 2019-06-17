@@ -1,0 +1,7 @@
+body{
+		background-image: url(/static/home.jpg)
+ 		background-repeat: no-repeat;
+  		background-size: cover;
+  		/*background-color: grey;*/
+  		/*color: red;*/
+ }
